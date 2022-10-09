@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import useResponsiveQuery from "use-responsive-query";
 import { RiMenuFill } from "react-icons/ri";
 import { MdOutlinePrivacyTip, MdOutlineDocumentScanner } from "react-icons/md";
@@ -47,13 +48,17 @@ const Template = ({ children }: IPrivacy) => {
         <div className="max-w-5xl lg:ml-auto lg:mr-auto md:ml-3">
           <ContainerStyled className="flex justify-between items-center" isSmallDevice>
             <div>
-              <Emoji symbol="📻" label="radio" className="lg:text-6xl" />
+              <Emoji symbol="📻" label="radio" className="lg:text-6xl cursor-pointer" href='/'/>
             </div>
             <div>
               {isLargeDevice && (
                 <ul className="flex">
-                  <li className="mr-6">Documentation</li>
-                  <li className="mr-6">Privacy Policy</li>
+                  <Link href="/docs">
+                    <li className="mr-6 cursor-pointer">Documentation</li>
+                  </Link>
+                  <Link href="/privacy">
+                    <li className="mr-6 cursor-pointer">Privacy Policy</li>
+                  </Link>
                 </ul>
               )}
               {isSmallDevice && (
@@ -70,10 +75,12 @@ const Template = ({ children }: IPrivacy) => {
                       {
                         icon: <MdOutlineDocumentScanner />,
                         name: "Documentation",
+                        url: '/docs',
                       },
                       {
                         icon: <MdOutlinePrivacyTip />,
                         name: "Privacy Policy",
+                        url: '/privacy'
                       },
                     ]}
                   />

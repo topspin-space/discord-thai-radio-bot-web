@@ -1,8 +1,9 @@
-import styled from "@emotion/styled";
+import Link from 'next/link'
 import { useSpring, animated } from "react-spring";
 type DataSource = {
   icon: React.ReactNode;
   name: string;
+  url?: string;
 };
 
 interface IDrawerProps {
@@ -27,17 +28,21 @@ const Drawer = (props: IDrawerProps) => {
       style={open ? springProps : {}}
       className={`${sideBarHiddenClassName} h-full w-72 fixed z-10 top-0 left-0 bg-slate-900 overflow-x-hidden pt-16`}
     >
-      <div className="ml-8">
+      <div className="ml-8 cursor-pointer">
         <ul>
           {dataSource.map((source, idx) => {
             return (
-              <li
-                className="mb-6 flex font-noto-sans-thai text-lg items-center"
+              <Link 
+                href={source.url ?? '/'}                   
                 key={idx}
               >
-                {source.icon}
-                <span className="ml-2">{source.name}</span>
-              </li>
+                <li
+                  className="mb-6 flex font-noto-sans-thai text-lg items-center"
+                >
+                  {source.icon}
+                  <span className="ml-2">{source.name}</span>
+                </li>
+              </Link>
             );
           })}
         </ul>
