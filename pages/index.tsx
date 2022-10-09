@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import { BsDiscord } from 'react-icons/bs'
 import Link from 'next/link'
-import Emoji from "../components/Emoji";
 import Template from "../components/Template";
 
 const Home: NextPage = () => {
@@ -17,7 +16,7 @@ const Home: NextPage = () => {
             สถานีวิทยุไทยบอท
           </p>
           <span className="text-center md:text-md lg:text-lg font-bold" data-aos="fade-up">
-            A discord music/radio bot that play live streams radio 24/7
+            A discord music/radio bot that play thai radio live streams radio 24/7
           </span>
           <div className="mt-8 w-auto" data-aos="fade-up">
             <Link href="https://discord.com/oauth2/authorize?client_id=788715436954746921&permissions=8&scope=bot&fbclid=IwAR0B9_2GutaND9eWSlcBT7Fd0XP50AGVbDmVgzzJVrNWH098dvHTTvULy28">
