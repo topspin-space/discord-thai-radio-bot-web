@@ -7,16 +7,16 @@ import Template from "../components/Template";
 const Home: NextPage = () => {
   return (
     <Template>
-      <section className="bg-gray-800 h-96">
+      <section className="h-96 block box-border header__clip-path bg-slate-700">
         <div className="font-noto-sans-thai max-w-5xl ml-auto mr-auto h-80 flex justify-center items-center flex-col">
           <p
-            className="text-8xl mb-4"
+            className="lg:text-8xl mb-4 sm:text-4xl"
             data-aos="fade-up"
             data-aos-anchor-placement="top-center"
           >
             สถานีวิทยุไทยบอท
           </p>
-          <span className="text-lg font-bold" data-aos="fade-up">
+          <span className="text-center md:text-md lg:text-lg font-bold" data-aos="fade-up">
             A discord music/radio bot that play live streams radio 24/7
           </span>
           <div className="mt-8 w-auto" data-aos="fade-up">
