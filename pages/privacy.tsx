@@ -1,28 +1,39 @@
-/* eslint-disable react/no-children-prop */
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import { marked } from 'marked'
 import Template from "../components/Template"
-import ReactMarkdown from 'react-markdown';
-import { privacyPolicy } from "../assets/privacy-policy";
 
-interface IPrivacy {
-  children: React.ReactNode
+
+export async function getStaticProps() {
+  const markdownWithMeta = fs.readFileSync(
+    path.join('assets', 'privacy-policy' + '.md'),
+    'utf-8'
+  )
+
+  const { data: frontmatter, content } = matter(markdownWithMeta)
+
+  return {
+    props: {
+      frontmatter,
+      content,
+    },
+  }
 }
 
-const markdownSource = `
-## Main content
-`;
-
-const Privacy = ({ children }: IPrivacy) => {
+const Privacy = ({ content }: any) => {
   return (
     <Template>
-      <section className="max-w-5xl ml-auto mr-auto">
-        <p className="text-4xl mt-8">
+      <section className="max-w-5xl ml-auto mr-auto text-black">
+        <p className="text-4xl mt-8 text-black">
           นโยบายความเป็นส่วนตัว
         </p>
         <span>Privacy Policy</span>
-        <ReactMarkdown>{privacyPolicy}</ReactMarkdown>
+        <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
       </section>
     </Template>
   )
 }
+
 
 export default Privacy
