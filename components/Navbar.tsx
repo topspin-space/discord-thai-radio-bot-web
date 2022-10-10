@@ -67,7 +67,7 @@ const Navbar = () => {
               </Link>
               <Link href="">
                 <li className="mr-6 cursor-pointer">
-                  <button className=" border border-white pt-2 pr-6 pl-6 pb-2 border-solid rounded-md hover:bg-slate-600">
+                  <button className=" border border-white pt-2 pr-6 pl-6 pb-2 border-solid rounded-md hover:bg-slate-600 font-bold">
                     Login
                   </button>
                 </li>
