@@ -11,7 +11,7 @@ specifiers:
   '@types/react-dom': 18.0.6
   aos: ^2.3.4
   autoprefixer: ^10.4.12
-  axios: ^1.1.2
+  axios: 0.27.2
   eslint: 8.25.0
   eslint-config-next: 12.3.1
   gray-matter: ^4.0.3
@@ -36,7 +36,7 @@ dependencies:
   '@emotion/styled': 11.10.4_g3tud4ene45llglqap74b5kkse
   '@tailwindcss/nesting': 0.0.0-insiders.565cd3e_postcss@8.4.17
   aos: 2.3.4
-  axios: 1.1.2
+  axios: 0.27.2
   gray-matter: 4.0.3
   marked: 4.1.1
   next: 12.3.1_biqbaboplfbrettd7655fr4n2y
@@ -889,12 +889,11 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /axios/1.1.2:
-    resolution: {integrity: sha512-bznQyETwElsXl2RK7HLLwb5GPpOLlycxHCtrpDR/4RqqBzjARaOTo3jz4IgtntWUYee7Ne4S8UHd92VCuzPaWA==}
+  /axios/0.27.2:
+    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0
-      proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
     dev: false
@@ -2729,10 +2728,6 @@ packages:
 
   /property-information/6.1.1:
     resolution: {integrity: sha512-hrzC564QIl0r0vy4l6MvRLhafmUowhO/O3KgVSoXIbbA2Sz4j8HGpJc6T2cubRVwMwpdiG/vKGfhT4IixmKN9w==}
-    dev: false
-
-  /proxy-from-env/1.1.0:
-    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
     dev: false
 
   /punycode/2.1.1:
