@@ -8,7 +8,8 @@ const nextConfig = {
     API_PROFILE: '/api/v1/discord/profile'
   },
   images: {
-    domains: ['cdn.discordapp.com']
+    domains: ['cdn.discordapp.com'],
+    unoptimized: true
   }
 }
 
