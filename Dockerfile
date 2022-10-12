@@ -5,4 +5,4 @@ COPY . .
 
 RUN npm install
 
-CMD ["npm","run","staging"]
+CMD ["npm","run","start:production"]
