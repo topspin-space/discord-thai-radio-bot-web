@@ -22,7 +22,6 @@ const Drawer = (props: IDrawerProps) => {
 
   const sideBarHiddenClassName = !open ? "hidden" : "";
 
-  console.log(springProps);
   return (
     <animated.div
       style={open ? springProps : {}}
