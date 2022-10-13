@@ -40,7 +40,7 @@ const Navbar = () => {
   const isLargeDevice = useResponsiveQuery("(min-width: 1200px)");
   const isSmallDevice = useResponsiveQuery("(max-width: 1199px)");
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
-
+  console.log(session)
   useEffect(() => {
     const handleClickOutSide = (event: MouseEvent) => {
       if (
