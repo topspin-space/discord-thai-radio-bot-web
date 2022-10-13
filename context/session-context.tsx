@@ -35,6 +35,7 @@ const SessionProvider: React.FC<{ children: React.ReactNode, data: string }> = p
   const fetchUser = async () => {
     try {
       const cookies = data.split('=')[1]
+      console.log(cookies)
       const response = await restClient.get(process.env.API_SESSION ?? '', {
         headers: {
           Cookies: cookies
