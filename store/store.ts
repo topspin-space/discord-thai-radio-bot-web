@@ -1,7 +1,8 @@
 import create from 'zustand'
 
 const store = () => ({
-  authURL: `${process.env.API_HOST}/api/v1/auth/discord`
+  authURL: `${process.env.API_HOST}/api/v1/auth/discord`,
+  sessions: {}
 })
 
 const useStore = create(store)
