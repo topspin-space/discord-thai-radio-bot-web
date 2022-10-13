@@ -16,13 +16,10 @@ const queryClient = new QueryClient({
   },
 });
 
-type SessionProviderProps = {
-  cookies: string
-}
 
-interface MyAppProps extends AppProps, SessionProviderProps {}
+interface MyAppProps extends AppProps {}
 
-function MyApp({ Component, pageProps, cookies }: MyAppProps) {
+function MyApp({ Component, pageProps }: MyAppProps) {
   useEffect(() => {
     AOS.init({
       initClassName: "aos-init",
@@ -30,17 +27,11 @@ function MyApp({ Component, pageProps, cookies }: MyAppProps) {
   }, []);
   return (
     <QueryClientProvider client={queryClient}>
-      <SessionProvider data={cookies}>
+      <SessionProvider>
         <Component {...pageProps} />
       </SessionProvider>
     </QueryClientProvider>
   );
-}
-
-MyApp.getInitialProps = async (context: AppContext) => {
-  const ctx = await App.getInitialProps(context)
-  console.log(ctx)
-  return { ...ctx, cookies: context.ctx.req?.headers.cookie }
 }
 
 export default MyApp;

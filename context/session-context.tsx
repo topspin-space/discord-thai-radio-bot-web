@@ -29,14 +29,13 @@ type SessionContextProps = {
 export const SessionContext = createContext<SessionContextProps | any>(null);
 
 
-const SessionProvider: React.FC<{ children: React.ReactNode, data: string }> = props => {
-  const { children, data } = props;
+const SessionProvider: React.FC<{ children: React.ReactNode }> = props => {
+  const { children } = props;
   const [session, setSession] = useState<Partial<SessionContextProps>>({})
   const fetchUser = async () => {
     try {
-      const cookies = data.split('=')[1]
+      console.log(document)
       const response = await restClient.get(process.env.API_SESSION ?? '') as ISession
-      console.log(response)
       setSession({
         discordId: response?.id,
         email: response?.email,
