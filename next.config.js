@@ -10,7 +10,8 @@ const nextConfig = {
   images: {
     domains: ['cdn.discordapp.com'],
     unoptimized: true
-  }
+  },
+  distDir: 'build'
 }
 
 module.exports = nextConfig
