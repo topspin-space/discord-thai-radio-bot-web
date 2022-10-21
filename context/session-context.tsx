@@ -34,7 +34,6 @@ const SessionProvider: React.FC<{ children: React.ReactNode }> = props => {
   const [session, setSession] = useState<Partial<SessionContextProps>>({})
   const fetchUser = async () => {
     try {
-      console.log(document)
       const response = await restClient.get(process.env.API_SESSION ?? '') as ISession
       setSession({
         discordId: response?.id,

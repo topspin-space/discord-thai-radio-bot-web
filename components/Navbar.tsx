@@ -25,7 +25,7 @@ const ContainerStyled = styled.div<{ isSmallDevice: boolean }>`
   `}
 `;
 
-const DATASOURCES = [
+const dataSources = [
   {
     icon: <MdOutlineDocumentScanner />,
     name: "Documentation",
@@ -40,13 +40,18 @@ const DATASOURCES = [
 ] as const
 
 const ProfileButtonMenu = () => {
-  const store = useStore((state) => state.logoutURL);
+  const { logoutURL } = useStore();
 
   return (
     <div className="border border-white pt-2 pr-6 pl-6 pb-2 border-solid rounded-md font-bold w-auto">
       <ul>
-        <li className="m-3 cursor-pointer flex justify-center">
-          <Link href={store}>
+        <li className="m-2 cursor-pointer flex justify-start">
+          <Link href='/my-server'>
+            My Server
+          </Link>
+        </li>
+        <li className="m-2 cursor-pointer flex justify-start">
+          <Link href={logoutURL}>
             Logout
           </Link>
         </li>
@@ -108,7 +113,7 @@ const Navbar = () => {
           {isLargeDevice && (
             <ul className="flex items-center">
               {
-                DATASOURCES.map((source, idx) => (
+                dataSources.map((source, idx) => (
                   <Link href={source.url} key={idx}>
                     <li className="mr-6 cursor-pointer">{source.name}</li>
                   </Link>
@@ -137,7 +142,7 @@ const Navbar = () => {
               </div>
               <Drawer
                 open={isOpenDrawer}
-                dataSource={DATASOURCES}
+                dataSource={dataSources}
                 container={() => {
                   return (
                     <div>
