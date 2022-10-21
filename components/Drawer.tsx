@@ -8,11 +8,12 @@ type DataSource = {
 
 interface IDrawerProps {
   open: boolean;
-  dataSource: DataSource[];
+  dataSource: Readonly<DataSource[]>;
+  container(): React.ReactNode;
 }
 
 const Drawer = (props: IDrawerProps) => {
-  const { open = false, dataSource } = props;
+  const { open = false, dataSource, container } = props;
   const springProps = useSpring({
     delay: 500,
     to: { opacity: 1, transform: 'translateX(0px)' },
@@ -25,7 +26,7 @@ const Drawer = (props: IDrawerProps) => {
   return (
     <animated.div
       style={open ? springProps : {}}
-      className={`${sideBarHiddenClassName} h-full w-72 fixed z-10 top-0 left-0 bg-slate-900 overflow-x-hidden pt-16`}
+      className={`${sideBarHiddenClassName} h-full w-72 fixed z-10 top-0 left-0 bg-slate-900 overflow-x-hidden pt-16 flex flex-col`}
     >
       <div className="ml-8 cursor-pointer">
         <ul>
@@ -45,6 +46,9 @@ const Drawer = (props: IDrawerProps) => {
             );
           })}
         </ul>
+      </div>
+      <div className='mb-8 ml-4 mr-8'>
+          {container()}
       </div>
     </animated.div>
   );
